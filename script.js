@@ -1,9 +1,6 @@
-window.onload = () => {
-    const articles = document.querySelectorAll('.article');
-    articles.forEach((article, index) => {
-        setTimeout(() => {
-            article.style.opacity = '1';
-            article.classList.add('active');
-        }, index * 1000);
-    });
-};
+// Example of an eerie flickering effect for text
+document.querySelectorAll('.flicker-effect').forEach(element => {
+    setInterval(() => {
+        element.style.opacity = (Math.random() > 0.5) ? 1 : 0;
+    }, 100);
+});
