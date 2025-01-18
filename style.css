@@ -96,3 +96,21 @@ a:hover {
    0% { opacity: 0; }
    100% { opacity: 1; }
 }
+.eye-icon {
+    width: 100px; /* Set the size of the eye */
+    height: auto;
+    border-radius: 50%; /* Make the image circular */
+    display: block;
+    margin: 0 auto;
+    animation: blink 3s infinite; /* Add a blinking effect */
+}
+
+/* Blinking animation for the eye */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3; /* Eye blinks every 3 seconds */
+    }
+}
