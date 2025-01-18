@@ -1,165 +1,104 @@
-/* Global Reset */
-* {
+/* Basic styling for the body and font */
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-body {
-    background-color: #0f0f0f; /* Dark background */
-    color: #ccc; /* Light text for readability */
-    font-size: 18px;
-    line-height: 1.6;
-    height: 100vh;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', monospace; /* Hacker font */
+/* Hide the audio player */
 audio {
     display: none;
 }
-}
 
-/* Main container */
+/* Main content container */
 .container {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    padding: 20px;
+    padding: 50px;
 }
 
-/* Background Image */
-.eye-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('eye_image.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15; /* Subtle eye effect */
-    z-index: -1;
-    animation: fadeInBackground 20s ease-in-out infinite;
+/* Title with flicker effect */
+.flicker-effect {
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flicker 3s infinite alternate;
 }
 
-/* Main heading */
-h1 {
-    font-size: 3.5rem;
-    color: #ff0000; /* Blood red */
-    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
-    margin-bottom: 30px;
-    animation: fadeInTitle 3s ease-in-out;
-}
-
-/* Eye Icon */
-.eye-icon {
-    font-size: 2rem;
-    animation: flicker 0.5s infinite alternate;
-    margin-right: 10px;
-}
-
-/* Footer - Akira text */
-.footer p {
-    font-size: 2rem;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
-    margin-top: 40px;
-}
-
-/* Paragraphs and content text */
-p {
-    color: #d3d3d3;
-    font-size: 1.2rem;
-    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7); /* Creepy red glow */
-    margin-bottom: 20px;
-    animation: fadeInContent 3s ease-in-out;
-}
-
-/* Links */
-a {
-    text-decoration: none;
-    color: #ff0000;
-    transition: color 0.3s ease-in-out;
-}
-
-a:hover {
-    color: #ff6600; /* Orange red hover */
-    text-shadow: 0 0 10px #ff6600;
-}
-
-/* Articles section */
-.articles {
-    margin-top: 30px;
-    opacity: 0;
-    animation: fadeInArticles 5s ease-in-out forwards;
-}
-
-.article {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-    animation: fadeInArticle 3s ease-in-out;
-}
-
-.article h2 {
-    font-size: 2.5rem;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
-    margin-bottom: 15px;
-}
-
-.article p {
-    font-size: 1.2rem;
-    color: #d3d3d3;
-    line-height: 1.6;
-    text-shadow: 0 0 5px #000; /* Black shadow for creepy feel */
-}
-
-/* Animations */
-@keyframes fadeInBackground {
-    0% { opacity: 0.05; }
-    100% { opacity: 0.15; }
-}
-
-@keyframes fadeInTitle {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeInContent {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeInArticles {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeInArticle {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Flickering Eye Animation */
 @keyframes flicker {
     0% { opacity: 1; }
     50% { opacity: 0.3; }
     100% { opacity: 1; }
 }
 
-/* Paranormal animations */
-@keyframes flickerText {
-    0% { opacity: 1; }
-    50% { opacity: 0.2; }
-    100% { opacity: 1; }
+/* Eye animation styles (optional) */
+.eye-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 5s infinite ease-in-out;
 }
 
-.flicker-effect {
-    animation: flickerText 1.5s infinite;
+/* Pulse effect for eye */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Dark text for the article */
+.main-message {
+    font-size: 1.5em;
+    line-height: 1.8;
+    color: #bbb;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Flashing effect (for added drama) */
+.flash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.1);
+    animation: flash 2s infinite alternate;
+}
+
+/* Flash effect animation */
+@keyframes flash {
+    0% { opacity: 0.1; }
+    100% { opacity: 0.6; }
+}
+
+/* Akira text styling at the bottom */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 5s infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Article links */
+.articles a {
+    color: #fff;
+    text-decoration: none;
 }
