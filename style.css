@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0a0a0a;
+    background-color: #121212;
     color: white;
     height: 100vh;
     display: flex;
@@ -31,9 +31,9 @@ body {
     background-image: url('eye_image.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.15;  /* Low opacity */
     z-index: -1;
-    animation: fadeInBackground 10s ease-in-out infinite;
+    animation: fadeInBackground 20s ease-in-out infinite;
 }
 
 .content {
@@ -57,7 +57,7 @@ h1 {
 }
 
 .article {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 20px;
@@ -78,9 +78,18 @@ h1 {
     text-shadow: 0 0 5px #000;
 }
 
+a {
+    text-decoration: none;
+    color: #ff0000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @keyframes fadeInBackground {
     0% { opacity: 0.05; }
-    100% { opacity: 0.1; }
+    100% { opacity: 0.15; }
 }
 
 @keyframes fadeInContent {
